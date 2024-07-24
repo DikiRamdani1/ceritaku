@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Astloch&family=Cinzel&family=Codystar:wght@300&family=Creepster&family=Cutive+Mono&family=Fira+Sans:wght@300&family=Fuggles&family=Gloria+Hallelujah&family=Habibi&family=Inclusive+Sans&family=Indie+Flower&family=Josefin+Sans:wght@200&family=Julee&family=Kalam:wght@300&family=Lobster&family=Londrina+Outline&family=Macondo&family=Metal+Mania&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Permanent+Marker&family=Playball&family=Rampart+One&family=Rock+Salt&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&family=Shizuru&family=Tenor+Sans&family=Tourney:wght@100&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -8,26 +9,59 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  position: sticky;
+  top: 0;
+  font-family: inclusive sans;
+  overflow-y: scroll;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.josefin {
+  font-family: josefin sans;
+}
+
+.bg-hero {
+  background-image: url("https://img.freepik.com/premium-photo/anime-girl-writing-book-garden-with-plants-generative-ai_958078-50203.jpg");
+  background-size: cover;
+  background-position: left;
+}
+
+.border-animation {
+  animation: animation-border linear 3s infinite;
+  -webkit-animation: animation-border linear 3s infinite;
+}
+
+@keyframes animation-border {
+  0%{
+    transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
+}50%{
+  transform: translateY(350%);
+  -webkit-transform: translateY(350%);
+  -moz-transform: translateY(350%);
+  -ms-transform: translateY(350%);
+  -o-transform: translateY(350%);
+}100%{
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+}
+}
+
+.hide-scrollbar {
+  overflow: scroll;
+  -ms-overflow-style: none; 
+  scrollbar-width: none;  
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;  
 }
